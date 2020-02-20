@@ -1,0 +1,11 @@
+server:
+  port: 8001
+spring:
+    application:
+      name: module-authority
+    profile:
+      active: dev
+    http:
+      encoding:
+        charset: UTF-8
+        enbale: true
