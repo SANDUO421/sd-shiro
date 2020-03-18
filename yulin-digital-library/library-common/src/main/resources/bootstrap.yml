@@ -1,0 +1,11 @@
+NACOS_SERVER: 127.0.0.1
+spring:
+  application:
+    name: library-common
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_SERVER}:8848
+        file-extension: yaml
+      discovery:
+        server-addr: ${NACOS_SERVER}:8848

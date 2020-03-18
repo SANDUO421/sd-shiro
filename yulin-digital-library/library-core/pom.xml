@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.yulin.library</groupId>
+        <artifactId>yulin-digital-library</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>library-core</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>library-mongodb</module>
+        <module>library-mybatis</module>
+        <module>library-nacos</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.code.findbugs</groupId>
+                    <artifactId>jsr305</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>hystrix-core</artifactId>
+                    <groupId>com.netflix.hystrix</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>feign-hystrix</artifactId>
+                    <groupId>io.github.openfeign</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jsr305</artifactId>
+                    <groupId>com.google.code.findbugs</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yulin.library</groupId>
+            <artifactId>library-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>bcprov-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+</project>

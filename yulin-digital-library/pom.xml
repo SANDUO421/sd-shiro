@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yulin.library</groupId>
+    <artifactId>yulin-digital-library</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>library-book</module>
+        <module>library-system</module>
+        <module>library-pay</module>
+        <module>library-setting</module>
+        <module>library-core</module>
+        <module>library-utils</module>
+        <module>library-cas</module>
+        <module>library-gateway</module>
+        <module>library-common</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>yulin-digital-library</name>
+    <description>榆林数字图书馆项目</description>
+
+    <!-- lookup parent from repository -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+
+        <mybatis-plus.version>3.3.0</mybatis-plus.version>
+
+        <!-- utils 模块 -->
+        <hutool.version>5.1.0</hutool.version>
+        <guava.version>28.1-jre</guava.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <apache.commons.lang3.version>3.9</apache.commons.lang3.version>
+        <zxing.version>3.4.0</zxing.version>
+        <cos.version>5.6.8</cos.version>
+        <jpush.version>3.4.3</jpush.version>
+        <redisson.version>3.10.7</redisson.version>
+
+        <redisson.version>3.11.6</redisson.version>
+        <spring-security-jwt.version>1.1.0.RELEASE</spring-security-jwt.version>
+        <spring-security-oauth2-autoconfigure.version>2.2.1.RELEASE</spring-security-oauth2-autoconfigure.version>
+        <nimbus.version>8.2.1</nimbus.version>
+
+        <!-- ijpay 支付 -->
+        <ijpay.version>2.4.0</ijpay.version>
+
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

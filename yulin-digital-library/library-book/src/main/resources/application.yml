@@ -1,0 +1,24 @@
+SERVER: 127.0.0.1
+#SERVER: 192.168.11.254
+server:
+  port: 8769
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${SERVER}/yulin
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+#          jwk-set-uri: http://172.22.1.26:8766/.well-known/jwks.json
+          jwk-set-uri: http://localhost:8766/.well-known/jwks.json
+feign:
+  hystrix:
+    enabled: false # 开启熔断
+file:
+  upload:
+    path: /data/file
+logging:
+  level:
+    com.yulin.library.*: debug
+    root: info

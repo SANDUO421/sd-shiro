@@ -1,0 +1,1 @@
+INSERT INTO system_set.sys_user_role (id, user_id, role_id, create_time, create_user_id, update_time, update_user_id, delete_time, delete_user_id, is_delete) VALUES (1219651433150611462, 1, 1219650958120538113, '2020-01-16 11:12:58', null, null, null, null, null, 0);

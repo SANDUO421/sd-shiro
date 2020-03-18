@@ -11,9 +11,10 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 /**
- *
- * @Auther: 库琦
- * @Description:
+ * @description:    Druid 配置
+ * @author:         sanduo
+ * @date:           2020/3/4 13:47
+ * @version:        1.0
  */
 @SpringBootConfiguration
 public class DruidDataSourceConfig {

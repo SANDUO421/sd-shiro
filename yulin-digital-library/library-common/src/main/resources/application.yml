@@ -1,0 +1,38 @@
+SERVER: 127.0.0.1
+#SERVER: 192.168.11.254
+server:
+  port: 8768
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${SERVER}/yulin_common
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+#          jwk-set-uri: http://172.22.1.26:8766/.well-known/jwks.json
+          jwk-set-uri: http://localhost:8766/.well-known/jwks.json
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+feign:
+  hystrix:
+    enabled: false # 开启熔断
+tencent:
+  cos:
+    secret-id: AKIDOaXcT63dYUBcnjss4XmmW1JbeT2MnIsh
+    secret-key: lGWWHvKUO3TdXlmY4KL7dtzsXyA6nDNN
+    region-name: "ap-chengdu"
+    bucket-name: "lyyu1988-1251826854"
+jiguang:
+  push:
+    app-key: 8ff91ec287d477dae94f4a95
+    master-secret: 4e2670a347dcae9424e4b23d
+logging:
+  level:
+    com.yulin.library.*: debug
+    root: info
+file:
+  upload:
+    path: /data/file

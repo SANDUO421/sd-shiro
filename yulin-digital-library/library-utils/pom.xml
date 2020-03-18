@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.yulin.library</groupId>
+        <artifactId>yulin-digital-library</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>library-utils</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons.lang3.version}</version>
+        </dependency>
+        <!-- 生成二维码 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>${zxing.version}</version>
+        </dependency>
+        <!-- 腾讯云文档 -->
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api</artifactId>
+            <version>${cos.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcprov-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 极光推送 -->
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jpush-client</artifactId>
+            <version>${jpush.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>bcprov-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- provided 意味着打包的时候可以不用包进去，别的设施（web container）会提供 -->
+        <!-- redis 分布式锁和消息订阅 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>${redisson.version}</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+            <version>${spring-security-jwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
