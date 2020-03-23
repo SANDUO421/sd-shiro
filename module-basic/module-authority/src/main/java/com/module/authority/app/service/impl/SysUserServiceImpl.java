@@ -114,6 +114,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @param sysUser 用户
      * @return SysUser
      */
+    @Override
     public SysUser findSecurityUserByUser(SysUser sysUser) {
         LambdaQueryWrapper<SysUser> queryWrapper = new QueryWrapper<SysUser>().lambda()
                 .select(SysUser::getUserId, SysUser::getUsername, SysUser::getPassword)
@@ -250,6 +251,21 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      */
     @Override
     public Set<String> findPermsByUserId(Integer userId) {
+        return userRoleService
+                .selectUserRoleListByUserId(userId)
+                .stream()
+                .map(sysUserRole -> "ROLE_" + sysUserRole.getRoleId())
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * 通过用户id查询角色集合
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public Set<String> findRoleIdByUserId(Integer userId) {
         return userRoleService
                 .selectUserRoleListByUserId(userId)
                 .stream()

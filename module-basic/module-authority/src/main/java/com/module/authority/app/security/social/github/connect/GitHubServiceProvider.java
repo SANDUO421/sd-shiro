@@ -1,7 +1,7 @@
 package com.module.authority.app.security.social.github.connect;
 
-import com.xd.pre.modules.security.social.github.api.GitHub;
-import com.xd.pre.modules.security.social.github.api.GitHubImpl;
+import com.module.authority.app.security.social.github.api.GitHub;
+import com.module.authority.app.security.social.github.api.GitHubImpl;
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 
 /**

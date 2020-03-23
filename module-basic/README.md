@@ -39,10 +39,10 @@
 ### 消息管理组件
 ### 定时任务组件
 
-## 参考
-The following guides illustrate how to use some features concretely:
+## TODO
+* 角色管理和用户管理一样
+* 
+    
+    
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 

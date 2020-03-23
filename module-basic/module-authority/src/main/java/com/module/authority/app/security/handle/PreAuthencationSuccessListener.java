@@ -1,6 +1,6 @@
 package com.module.authority.app.security.handle;
 
-import com.xd.pre.security.PreSecurityUser;
+import com.module.common.security.domain.PreSecurityUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;

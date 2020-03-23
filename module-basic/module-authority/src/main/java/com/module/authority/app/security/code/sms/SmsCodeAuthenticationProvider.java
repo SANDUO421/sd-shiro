@@ -1,6 +1,6 @@
 package com.module.authority.app.security.code.sms;
 
-import com.xd.pre.modules.security.UserDetailsServiceImpl;
+import com.module.authority.app.security.UserDetailsServiceImpl;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

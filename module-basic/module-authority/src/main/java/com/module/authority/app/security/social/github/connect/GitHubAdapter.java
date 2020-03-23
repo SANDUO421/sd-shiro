@@ -1,7 +1,8 @@
 package com.module.authority.app.security.social.github.connect;
 
-import com.xd.pre.modules.security.social.github.api.GitHub;
-import com.xd.pre.modules.security.social.github.api.GitHubUserInfo;
+
+import com.module.authority.app.security.social.github.api.GitHub;
+import com.module.authority.app.security.social.github.api.GitHubUserInfo;
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;

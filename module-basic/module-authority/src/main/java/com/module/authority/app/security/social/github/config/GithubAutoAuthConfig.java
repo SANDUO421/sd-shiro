@@ -1,8 +1,8 @@
 package com.module.authority.app.security.social.github.config;
 
-import com.xd.pre.modules.security.properties.GithubProperties;
-import com.xd.pre.modules.security.properties.PreSecurityProperties;
-import com.xd.pre.modules.security.social.github.connect.GitHubConnectionFactory;
+import com.module.authority.app.security.properties.GithubProperties;
+import com.module.authority.app.security.properties.PreSecurityProperties;
+import com.module.authority.app.security.social.github.connect.GitHubConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;

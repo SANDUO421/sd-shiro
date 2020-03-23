@@ -1,8 +1,8 @@
 package com.module.authority.app.security.handle;
 
 import cn.hutool.http.HttpStatus;
-import com.xd.pre.common.utils.R;
-import com.xd.pre.security.util.SecurityUtil;
+import com.module.common.security.utils.SecurityUtil;
+import com.module.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

@@ -1,5 +1,6 @@
 package com.module.authority.app.security.social;
 
+import com.module.authority.app.data.tenant.PreTenantContextHolder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;

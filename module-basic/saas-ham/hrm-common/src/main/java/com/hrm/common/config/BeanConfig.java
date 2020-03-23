@@ -1,4 +1,4 @@
-package com.hrm.company.config;
+package com.hrm.common.config;
 
 import com.hrm.common.utils.IdWorker;
 import org.springframework.context.annotation.Bean;

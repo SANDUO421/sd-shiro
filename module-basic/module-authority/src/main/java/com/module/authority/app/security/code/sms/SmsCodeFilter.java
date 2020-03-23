@@ -1,7 +1,7 @@
 package com.module.authority.app.security.code.sms;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.xd.pre.common.exception.ValidateCodeException;
+import com.module.common.exception.ValidateCodeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;

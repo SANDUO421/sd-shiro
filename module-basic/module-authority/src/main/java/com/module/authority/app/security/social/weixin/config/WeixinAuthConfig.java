@@ -1,9 +1,9 @@
 package com.module.authority.app.security.social.weixin.config;
 
-import com.xd.pre.modules.security.properties.PreSecurityProperties;
-import com.xd.pre.modules.security.properties.WeiXinProperties;
-import com.xd.pre.modules.security.social.SocialAutoConfigurerAdapter;
-import com.xd.pre.modules.security.social.weixin.connect.WeixinConnectionFactory;
+import com.module.authority.app.security.properties.PreSecurityProperties;
+import com.module.authority.app.security.properties.WeiXinProperties;
+import com.module.authority.app.security.social.SocialAutoConfigurerAdapter;
+import com.module.authority.app.security.social.weixin.connect.WeixinConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 package com.module.authority.app.security.social.weixin.connect;
 
-import com.xd.pre.modules.security.social.weixin.api.Weixin;
+import com.module.authority.app.security.social.weixin.api.Weixin;
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionData;

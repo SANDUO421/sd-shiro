@@ -1,11 +1,11 @@
 package com.module.authority.app.security.handle;
 
-import com.xd.pre.common.utils.R;
-import com.xd.pre.modules.security.PreSocialUser;
-import com.xd.pre.modules.security.util.JwtUtil;
-import com.xd.pre.security.LoginType;
-import com.xd.pre.security.PreSecurityUser;
-import com.xd.pre.security.util.SecurityUtil;
+import com.module.authority.app.security.PreSocialUser;
+import com.module.authority.app.security.utils.JwtUtil;
+import com.module.common.security.domain.PreSecurityUser;
+import com.module.common.security.utils.LoginType;
+import com.module.common.security.utils.SecurityUtil;
+import com.module.common.utils.R;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -40,12 +40,12 @@ public class PreAuthenticationSuccessHandler implements AuthenticationSuccessHan
             //生成token
             String s = JwtUtil.generateToken(userDetail);
             // 是短信登录返回token
-            if (LoginType.sms.equals(userDetail.getLoginType())) {
+            if (LoginType.SMS.equals(userDetail.getLoginType())) {
                 SecurityUtil.writeJavaScript(R.ok(s), response);
             }
         } else if (principal instanceof PreSocialUser) {
             PreSocialUser userDetail = (PreSocialUser) authentication.getPrincipal();
-            PreSecurityUser preSecurityUser = new PreSecurityUser(Integer.parseInt(userDetail.getUserId()), userDetail.getUsername(), userDetail.getPassword(), userDetail.getAuthorities(), null);
+            PreSecurityUser preSecurityUser = new PreSecurityUser(null,Integer.parseInt(userDetail.getUserId()), userDetail.getUsername(), userDetail.getPassword(), userDetail.getAuthorities());
             //存储认证信息
             SecurityContextHolder.getContext().setAuthentication(authentication);
             //生成token

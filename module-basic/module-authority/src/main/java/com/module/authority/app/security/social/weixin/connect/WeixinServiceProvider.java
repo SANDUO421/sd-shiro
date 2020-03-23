@@ -1,7 +1,8 @@
 package com.module.authority.app.security.social.weixin.connect;
 
-import com.xd.pre.modules.security.social.weixin.api.WeiXinImpl;
-import com.xd.pre.modules.security.social.weixin.api.Weixin;
+
+import com.module.authority.app.security.social.weixin.api.WeiXinImpl;
+import com.module.authority.app.security.social.weixin.api.Weixin;
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 
 /**

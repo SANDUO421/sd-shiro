@@ -72,4 +72,18 @@ public interface ISysUserService extends IService<SysUser> {
      * @return
      */
     Set<String> findPermsByUserId(Integer userId);
+
+    /**
+     * 通过用户去查找用户(id/用户名/手机号)
+     * @param sysUser
+     * @return
+     */
+    SysUser findSecurityUserByUser(SysUser sysUser);
+
+    /**
+     * 通过用户id查询角色集合
+     * @param userId
+     * @return
+     */
+    Set<String> findRoleIdByUserId(Integer userId);
 }

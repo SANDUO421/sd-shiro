@@ -1,8 +1,9 @@
 package com.module.authority.app.security.code.sms;
 
-import com.xd.pre.modules.security.UserDetailsServiceImpl;
-import com.xd.pre.modules.security.handle.PreAuthenticationFailureHandler;
-import com.xd.pre.modules.security.handle.PreAuthenticationSuccessHandler;
+
+import com.module.authority.app.security.UserDetailsServiceImpl;
+import com.module.authority.app.security.handle.PreAuthenticationFailureHandler;
+import com.module.authority.app.security.handle.PreAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
