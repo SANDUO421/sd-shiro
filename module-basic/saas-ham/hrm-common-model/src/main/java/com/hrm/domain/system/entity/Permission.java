@@ -38,7 +38,7 @@ public class Permission implements Serializable {
     */
     private Integer type;
     /**
-    * 权限标识
+    * 权限标识：非常重要的配置，都是根据这个判断
     */
     private String code;
     /**
@@ -53,6 +53,10 @@ public class Permission implements Serializable {
      *      按钮 --- api权限
     */
     private String pid;
+    /**
+     * 可见性状态
+     */
+    private Integer enVisiable;
 
 
 }
