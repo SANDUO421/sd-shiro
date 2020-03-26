@@ -17,3 +17,9 @@ spring:
     database: mysql
     show-sql: true
     open-in-view: true
+
+jwt:
+  config:
+    key: saas_hrm
+    ttl: 3600000
+    secret-key: secretKey

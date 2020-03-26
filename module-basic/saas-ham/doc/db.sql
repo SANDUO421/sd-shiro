@@ -69,6 +69,7 @@ create table saas_hrm.bs_user
     company_id varchar(40) default null comment '企业Id',
     company_name varchar(40)  default null comment '企业名称',
     department_name varchar(40)  default null comment '部门名称',
+    level varchar(100) not null comment 'saasAdmin: saas管理员, coAdmin：企业管理员 ,user：普通用户',
     primary key (id),
     unique key idx_user_phone(mobile) using btree
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户管理';

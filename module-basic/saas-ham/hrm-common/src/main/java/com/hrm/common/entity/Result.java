@@ -43,6 +43,17 @@ public class Result {
         this.message = resultCode.message;
         this.data = data;
     }
+    /**
+     * 构造
+     * @param data data
+     * @param data 数据
+     */
+    public Result(Object data){
+        this.success = ResultCode.SUCCESS.success;
+        this.code = ResultCode.SUCCESS.code;
+        this.message = ResultCode.SUCCESS.message;
+        this.data = data;
+    }
 
     /**
      *

@@ -131,4 +131,15 @@ public class UserServiceImpl extends BaseService implements IUserService {
     public void delete(String id) {
         userDao.deleteById(id);
     }
+
+    /**
+     * 根据mobile查询用户
+     *
+     * @param mobile
+     * @return
+     */
+    @Override
+    public User findByMobile(String mobile) {
+        return userDao.findByMobile(mobile);
+    }
 }

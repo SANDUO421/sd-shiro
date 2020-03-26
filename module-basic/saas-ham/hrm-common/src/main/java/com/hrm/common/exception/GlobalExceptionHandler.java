@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
             MySQLIntegrityConstraintViolationException e = (MySQLIntegrityConstraintViolationException)ex.getCause().getCause();
             return Result.FALL(e.getErrorCode(),e.getMessage());
         }
-        return Result.FALL(ex.getCause().getMessage());
+        return Result.FALL(ex.getMessage());
     }
     @ExceptionHandler(SQLException.class)
     public Result handlerSqlException(SQLException e) {

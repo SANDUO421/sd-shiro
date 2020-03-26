@@ -52,4 +52,11 @@ public interface IUserService {
      * @param id
      */
     void delete(String id);
+
+    /**
+     * 根据mobile查询用户
+     * @param mobile
+     * @return
+     */
+    User findByMobile(String mobile);
 }

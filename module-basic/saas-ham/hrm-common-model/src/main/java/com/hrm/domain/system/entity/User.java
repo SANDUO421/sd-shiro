@@ -100,6 +100,15 @@ public class User implements Serializable {
     * 部门名称
     */
     private String departmentName;
+
+    /**
+     * level:
+     *      String:
+     *          saasAdmin: saas管理员具备的所有权限
+     *          coAdmin：企业管理员（创建租户企业的时候添加）
+     *          user：普通用户（需要分配角色）
+     */
+    private String level;
     /**
      * 用户与角色多对多
      *   @JsonIgnore 忽略json转换（不忽略会形成死循环）

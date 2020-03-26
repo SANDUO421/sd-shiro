@@ -1,5 +1,6 @@
 package com.hrm.common.exception;
 
+import com.hrm.common.entity.ResultCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,10 @@ public class BusinessException extends RuntimeException implements Serializable 
     public BusinessException(String message) {
         super(message);
         this.message = message;
+    }
+    public BusinessException(ResultCode resultCode) {
+        super(resultCode.getMessage());
+        this.message = resultCode.getMessage();
     }
     public BusinessException(String message,Throwable throwable) {
         super(message,throwable);

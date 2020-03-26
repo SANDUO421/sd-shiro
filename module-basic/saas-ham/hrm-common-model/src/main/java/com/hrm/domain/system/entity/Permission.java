@@ -1,5 +1,6 @@
 package com.hrm.domain.system.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,8 +8,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 权限管理(PePremission)实体类
@@ -34,7 +38,7 @@ public class Permission implements Serializable {
     */
     private String name;
     /**
-    * 权限类型: 1 菜单,2 功能,3 为API
+    * 权限类型: 1 菜单(菜单+按钮),2 功能(按钮),3 API
     */
     private Integer type;
     /**
@@ -56,7 +60,11 @@ public class Permission implements Serializable {
     /**
      * 可见性状态
      */
-    private Integer enVisiable;
+    private Integer enVisible;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "permissions")
+    private Set<Role> users = new HashSet<>();
 
 
 }
