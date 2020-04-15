@@ -12,8 +12,25 @@ spring:
     url: jdbc:mysql://192.168.35.80:3306/shiro_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
     username: root
     password: developer@wlw
+  redis:
+    host: 192.168.35.80
+    port: 6379
+    password: wlw@redis
+    database: 1
   # JPA
   jpa:
     database: mysql
     show-sql: true
     open-in-view: true
+#  devtools:
+#    restart:
+#      enabled: true
+#      additional-paths: src/main/java
+#      include:
+#        mapper: /mapper-[\w-\.]+jar
+#        pagehelper: /pagehelper-[\w-\.]+jar
+#        shiro: /shiro-[\w-\.]+jar
+
+
+  thymeleaf:
+    cache: false

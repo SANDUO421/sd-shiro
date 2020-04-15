@@ -3,6 +3,7 @@ package com.sd.shiro.domain.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.crazycake.shiro.AuthCachePrincipal;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,6 +19,9 @@ import java.util.Set;
 /**
  * 用户表(PeUser)实体类
  *
+ *      AuthCachePrincipal：
+ *              redis shiroc插件包：存储会有key
+ *
  * @author SanDuo
  * @since 2020-03-30 19:10:06
  */
@@ -26,8 +30,9 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User implements Serializable {
-    private static final long serialVersionUID = 434051715003272658L;
+public class User implements Serializable , AuthCachePrincipal {
+
+
     /**
     * 主键
     */
@@ -47,4 +52,8 @@ public class User implements Serializable {
             ,inverseJoinColumns = {@JoinColumn(name="role_id",referencedColumnName = "id")})
     private Set<Role> roles = new HashSet<>(0);
 
+    @Override
+    public String getAuthCacheKey() {
+        return null;
+    }
 }
