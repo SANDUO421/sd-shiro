@@ -14,7 +14,7 @@ public interface IPermissionService {
     /**
      * 查询所有
      * type: 查询全部权限列表type： 0：菜单+按钮，1:菜单，2：API接口
-     * enVisible ：0 查询所有saasp平台的最高权限，1查询企业的权限
+     * enVisible ：0 查询所有saas平台的最高权限，1查询企业的权限
      * pid 父ID
      * @param map 参数
      * @return 权限列表 List<Permission>

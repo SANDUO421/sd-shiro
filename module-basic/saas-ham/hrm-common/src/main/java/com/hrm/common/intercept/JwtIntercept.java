@@ -7,7 +7,8 @@ import io.jsonwebtoken.Claims;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +28,7 @@ import java.util.Objects;
  * @author 三多
  * @Time 2020/3/26
  */
-@Component
+ @Component
 public class JwtIntercept extends HandlerInterceptorAdapter {
 
     @Autowired
@@ -52,8 +53,28 @@ public class JwtIntercept extends HandlerInterceptorAdapter {
             //解析token 获取 claims
             Claims claims = jwtUtils.parseJwt(token);
             if(Objects.nonNull(claims)){
-                request.setAttribute("user_claims",claims);
-                return true;
+                /**
+                 * 获取当前用户可访问的API权限字符串，
+                 *      a. 获取handlerMethod
+                 *      b. 获取注解
+                 *      c. 获取注解的名称
+                 *      d. 判断是否包含
+                 *          包含就赋权
+                 *          否则提示没有权限
+                 */
+                //获取当前用户可访问的API权限字符串
+                String apis = String.valueOf(claims.get("apis"));
+                if(handler instanceof HandlerMethod) {
+                    HandlerMethod handlerMethod = (HandlerMethod) handler;
+                    DeleteMapping methodAnnotation = handlerMethod.getMethodAnnotation(DeleteMapping.class);
+                    String name = methodAnnotation.name();
+                    if(apis.contains(name)){
+                        request.setAttribute("user_claims",claims);
+                        return true;
+                    }else{
+                        throw new BusinessException(ResultCode.UN_AUTHORISE);
+                    }
+                }
             }
         }
         throw new BusinessException(ResultCode.UN_AUTHENTICATED);

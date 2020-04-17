@@ -16,8 +16,13 @@ spring:
   jpa:
     database: mysql
     show-sql: true
+    # Register OpenEntityManagerInViewInterceptor. Binds a JPA EntityManager 解决no session问题
     open-in-view: true
-
+  redis:
+    host: 192.168.35.80
+    port: 6379
+    password: wlw@redis
+    database: 1
 jwt:
   config:
     key: saas_hrm

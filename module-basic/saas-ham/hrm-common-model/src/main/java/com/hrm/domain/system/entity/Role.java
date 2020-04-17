@@ -1,11 +1,14 @@
 package com.hrm.domain.system.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.CustomLog;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,10 +28,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "pe_role")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Role implements Serializable {
     private static final long serialVersionUID = 794853884072934780L;
     /**

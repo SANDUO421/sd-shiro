@@ -2,9 +2,10 @@ package com.hrm.domain.system.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,10 +23,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "pe_permission")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Permission implements Serializable {
     private static final long serialVersionUID = 601531109854754160L;
     /**
@@ -58,13 +59,15 @@ public class Permission implements Serializable {
     */
     private String pid;
     /**
-     * 可见性状态
+     * 可见性状态 0 查询所有saas平台的最高权限，1查询企业的权限
      */
     private Integer enVisible;
-
+    /**
+     * 角色列表
+     */
     @JsonIgnore
     @ManyToMany(mappedBy = "permissions")
-    private Set<Role> users = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
 
 }

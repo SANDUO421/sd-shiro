@@ -40,16 +40,16 @@ public class PermissionServiceImpl implements IPermissionService {
         Specification<Permission> spec = (root, criteriaQuery,criteriaBuilder)->{
             List<Predicate> list = new ArrayList<>();
             //根据父id查询
-            if(Objects.nonNull(root.get("pid"))){
+            if(Objects.nonNull(map.get("pid"))){
                 list.add(criteriaBuilder.equal(root.get("pid").as(String.class),(String)map.get("pid")));
             }
             //根据enVisible查询
-            if(Objects.nonNull(root.get("enVisible"))){
+            if(Objects.nonNull(map.get("enVisible"))){
                 list.add(criteriaBuilder.equal(root.get("enVisible").as(String.class),(String)map.get("enVisible")));
             }
             //根据type查询
-            if(Objects.nonNull(root.get("type"))){
-                String ty = String.valueOf(root.get("type"));
+            if(Objects.nonNull(map.get("type"))){
+                String ty = String.valueOf(map.get("type"));
                 CriteriaBuilder.In<Object> in = criteriaBuilder.in(root.get("type"));
                 if(String.valueOf(PermissionEnum.MENU_AND_POINT.getCode()).equals(ty)){
                     //菜单+按钮

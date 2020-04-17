@@ -43,7 +43,21 @@
 * 角色管理和用户管理一样
 * 权限管理
     
-    
+## 问题汇总：
+
+* [SpringDataJpa -- NoSession问题分析和解决](https://blog.csdn.net/m0_37602117/article/details/79771350)
+
+```yml
+    /**添加配置*/
+    spring:
+        jpa:
+           open-in-view: true
+    /**添加Bean*/
+    @Bean
+    public OpenEntityManagerInViewFilter openEntityManagerInViewFilter(){
+        return new OpenEntityManagerInViewFilter();
+    }
+``` 
 
 ## 目前
 ：https://www.bilibili.com/video/av75572951?p=104

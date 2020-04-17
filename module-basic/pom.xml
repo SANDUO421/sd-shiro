@@ -8,6 +8,7 @@
         <module>module-authority</module>
         <module>module-log</module>
         <module>saas-ham</module>
+        <module>module-websocket</module>
     </modules>
 
     <parent>

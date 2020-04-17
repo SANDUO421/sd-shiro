@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,10 +27,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "bs_user")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class User implements Serializable {
     private static final long serialVersionUID = 356108516754271208L;
     /**
@@ -113,8 +115,8 @@ public class User implements Serializable {
      * 用户与角色多对多
      *   @JsonIgnore 忽略json转换（不忽略会形成死循环）
      */
-    @ManyToMany
     @JsonIgnore
+    @ManyToMany
     @JoinTable(name="pe_user_role",joinColumns = {@JoinColumn(name = "user_id",referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name="role_id",referencedColumnName = "id")})
     private Set<Role> roles = new HashSet<>();

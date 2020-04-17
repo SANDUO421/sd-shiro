@@ -1,11 +1,15 @@
 package com.hrm.domain.system.vo;
 
-import com.hrm.common.entity.PermissionEnum;
 import com.hrm.domain.system.entity.Permission;
 import com.hrm.domain.system.entity.Role;
 import com.hrm.domain.system.entity.User;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.crazycake.shiro.AuthCachePrincipal;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -14,12 +18,16 @@ import java.util.Set;
 
 /**
  * 用户信息返回对象
+ *      整合redis时候需要存储到redis
  *
  * @author 三多
  * @Time 2020/3/24
  */
-@Data
-public class ProfileResult {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProfileResult implements Serializable, AuthCachePrincipal {
     /**
      * 移动电话
      */
@@ -29,9 +37,13 @@ public class ProfileResult {
      */
     private String username;
     /**
-     * 企业
+     * 企业Id
      */
-    private String company;
+    private String companyId;
+    /**
+     * 企业名称
+     */
+    private String companyName;
     /**
      * roles:{
      * menus:[],
@@ -49,7 +61,8 @@ public class ProfileResult {
      */
     public ProfileResult(User user, List<Permission> list) {
         this.mobile = user.getMobile();
-        this.company = user.getCompanyName();
+        this.companyName = user.getCompanyName();
+        this.companyId= user.getCompanyId();
         this.username = user.getUsername();
         Set<String> menus = new HashSet<>();
         Set<String> points = new HashSet<>();
@@ -79,7 +92,8 @@ public class ProfileResult {
      */
     public ProfileResult(User user) {
         this.mobile = user.getMobile();
-        this.company = user.getCompanyName();
+        this.companyName = user.getCompanyName();
+        this.companyId = user.getCompanyId();
         this.username = user.getUsername();
         Set<Role> roles = user.getRoles();
         Set<String> menus = new HashSet<>();
@@ -105,4 +119,12 @@ public class ProfileResult {
         this.roles.put("apis", apis);
     }
 
+    /**
+     * 缓存到redis中的key
+     * @return
+     */
+    @Override
+    public String getAuthCacheKey() {
+        return null;
+    }
 }

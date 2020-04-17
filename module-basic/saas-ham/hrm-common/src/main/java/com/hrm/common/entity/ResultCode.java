@@ -16,7 +16,7 @@ public enum ResultCode {
     /************************系统错误返回码:1XXX***************************/
     FAIL(false, 10001, "操作失败!"),
     UN_AUTHENTICATED(false, 10002, "您还未登录!"),
-    UN_AUTHORISE(false, 10003, "没有权限!"),
+    UN_AUTHORISE(false, 10003, "没有访问权限!"),
     SERVER_ERROR(false, 99999, "抱歉系统繁忙，请稍后重试!"),
     /************************用户操作返回码:2XXX***************************/
     MOBILE_ERROR_OR_PASSWORD_ERROR(false, 20001, "用户名或者密码错误！");
